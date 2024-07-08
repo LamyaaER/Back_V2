@@ -1,0 +1,218 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Migrations\\20240708133855_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppQuizz\\Migrations\\20240708133855_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\agent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\agent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\technology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\technology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|c:\\users\\ib\\desktop\\quiz\\appquizz\\appquizz\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF2F487-602C-439A-B888-B305ED4DA334}|AppQuizz\\AppQuizz.csproj|solutionrelative:appquizz\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240708133855_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Migrations\\20240708133855_InitialCreate.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Migrations\\20240708133855_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Migrations\\20240708133855_InitialCreate.cs",
+              "RelativeToolTip": "AppQuizz\\Migrations\\20240708133855_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T13:38:55.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AppQuizz\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T13:29:45.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Program.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Program.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Program.cs",
+              "RelativeToolTip": "AppQuizz\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:28:01.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\appsettings.json",
+              "RelativeDocumentMoniker": "AppQuizz\\appsettings.json",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\appsettings.json",
+              "RelativeToolTip": "AppQuizz\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-08T12:27:45.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Question.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Question.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAwwA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:20:53.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Agent.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Agent.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Agent.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Agent.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Agent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:20:30.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Quiz.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Quiz.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Quiz.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Quiz.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Quiz.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:23:16.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Technology.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Technology.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Technology.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Technology.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Technology.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:26:01.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Response.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Response.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Response.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Response.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Response.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:24:32.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Candidate.cs",
+              "DocumentMoniker": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Candidate.cs",
+              "RelativeDocumentMoniker": "AppQuizz\\Models\\Candidate.cs",
+              "ToolTip": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\Models\\Candidate.cs",
+              "RelativeToolTip": "AppQuizz\\Models\\Candidate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T12:20:41.771Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
