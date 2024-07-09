@@ -6,8 +6,8 @@
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public List<Quiz> Quizs { get; set; }
-        public List<Candidate> Candidates { get; set; }
+        public ICollection<Quiz> Quizs { get; set; }
+        public ICollection<Candidate> Candidates { get; set; }
 
         public Agent()
         {

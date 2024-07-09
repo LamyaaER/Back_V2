@@ -51,7 +51,7 @@ namespace AppQuizz.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("AgentId")
+                    b.Property<int>("AgentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -102,7 +102,8 @@ namespace AppQuizz.Migrations
 
                     b.HasIndex("QuizId");
 
-                    b.HasIndex("ResponseId");
+                    b.HasIndex("ResponseId")
+                        .IsUnique();
 
                     b.HasIndex("TechnologyId");
 
@@ -382,9 +383,13 @@ namespace AppQuizz.Migrations
 
             modelBuilder.Entity("AppQuizz.Models.Candidate", b =>
                 {
-                    b.HasOne("AppQuizz.Models.Agent", null)
+                    b.HasOne("AppQuizz.Models.Agent", "Agent")
                         .WithMany("Candidates")
-                        .HasForeignKey("AgentId");
+                        .HasForeignKey("AgentId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Agent");
                 });
 
             modelBuilder.Entity("AppQuizz.Models.Question", b =>
@@ -396,15 +401,15 @@ namespace AppQuizz.Migrations
                         .IsRequired();
 
                     b.HasOne("AppQuizz.Models.Response", "Response")
-                        .WithMany()
-                        .HasForeignKey("ResponseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithOne()
+                        .HasForeignKey("AppQuizz.Models.Question", "ResponseId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("AppQuizz.Models.Technology", "Technology")
                         .WithMany("Questions")
                         .HasForeignKey("TechnologyId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Quiz");
@@ -419,13 +424,13 @@ namespace AppQuizz.Migrations
                     b.HasOne("AppQuizz.Models.Agent", "Agent")
                         .WithMany("Quizs")
                         .HasForeignKey("AgentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("AppQuizz.Models.Candidate", "Candidate")
                         .WithMany("Quizs")
                         .HasForeignKey("CandidateId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("AppQuizz.Models.Technology", "Technology")

@@ -98,7 +98,7 @@ namespace AppQuizz.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AgentId = table.Column<int>(type: "int", nullable: true)
+                    AgentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -236,14 +236,12 @@ namespace AppQuizz.Migrations
                         name: "FK_Quizs_Agents_AgentId",
                         column: x => x.AgentId,
                         principalTable: "Agents",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Quizs_Candidates_CandidateId",
                         column: x => x.CandidateId,
                         principalTable: "Candidates",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Quizs_Technologies_TechnologyId",
                         column: x => x.TechnologyId,
@@ -278,14 +276,12 @@ namespace AppQuizz.Migrations
                         name: "FK_Questions_Responses_ResponseId",
                         column: x => x.ResponseId,
                         principalTable: "Responses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Questions_Technologies_TechnologyId",
                         column: x => x.TechnologyId,
                         principalTable: "Technologies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -340,7 +336,8 @@ namespace AppQuizz.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Questions_ResponseId",
                 table: "Questions",
-                column: "ResponseId");
+                column: "ResponseId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Questions_TechnologyId",

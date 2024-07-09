@@ -10,6 +10,7 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
+    [ApiController]
     public class AgentsController : Controller
     {
         private readonly ApplicationDbContext _context;

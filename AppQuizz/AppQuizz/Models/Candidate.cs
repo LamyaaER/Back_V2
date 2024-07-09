@@ -6,7 +6,10 @@
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public List<Quiz> Quizs { get; set; }
+        public ICollection<Quiz> Quizs { get; set; }
+
+        public int AgentId { get; set; }
+        public Agent Agent { get; set; }
 
         public Candidate()
         {

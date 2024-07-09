@@ -16,7 +16,7 @@
         public int TechnologyId { get; set; }
         public Technology Technology { get; set; }
 
-        public List<Question> Questions { get; set; }
+        public ICollection<Question> Questions { get; set; }
 
         public Quiz()
         {
