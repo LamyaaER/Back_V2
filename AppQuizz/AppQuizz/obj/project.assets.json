@@ -4286,11 +4286,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
+      "projectUniqueName": "C:\\Users\\IB\\Desktop\\quiz\\Back\\Back_V2\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
       "projectName": "AppQuizz",
-      "projectPath": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
+      "projectPath": "C:\\Users\\IB\\Desktop\\quiz\\Back\\Back_V2\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
       "packagesPath": "C:\\Users\\IB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\obj\\",
+      "outputPath": "C:\\Users\\IB\\Desktop\\quiz\\Back\\Back_V2\\AppQuizz\\AppQuizz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

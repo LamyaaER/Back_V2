@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public string Title { get; set; }
 
-        public int ReponseId { get; set; }
+        public int ResponseId { get; set; }
         public Response Response { get; set; }
         public string TypeResponse { get; set; }
         public string ComplexityLevel { get; set; }
@@ -25,4 +25,4 @@
             Quiz = new Quiz();
         }
     }
-    }
+}

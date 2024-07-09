@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rlmHIalWHyc=",
+  "dgSpecHash": "tz1i60/Twok=",
   "success": true,
-  "projectFilePath": "C:\\Users\\IB\\Desktop\\quiz\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
+  "projectFilePath": "C:\\Users\\IB\\Desktop\\quiz\\Back\\Back_V2\\AppQuizz\\AppQuizz\\AppQuizz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IB\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\IB\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

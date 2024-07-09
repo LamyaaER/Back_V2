@@ -30,9 +30,6 @@ namespace AppQuizz.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CandidatId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -40,9 +37,6 @@ namespace AppQuizz.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("QuizId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -68,9 +62,6 @@ namespace AppQuizz.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuizId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AgentId");
@@ -91,9 +82,6 @@ namespace AppQuizz.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("QuizId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReponseId")
                         .HasColumnType("int");
 
                     b.Property<int>("ResponseId")
@@ -138,9 +126,6 @@ namespace AppQuizz.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TechnologyId")
                         .HasColumnType("int");
 
@@ -171,7 +156,7 @@ namespace AppQuizz.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("response")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -191,9 +176,6 @@ namespace AppQuizz.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -422,7 +404,7 @@ namespace AppQuizz.Migrations
                     b.HasOne("AppQuizz.Models.Technology", "Technology")
                         .WithMany("Questions")
                         .HasForeignKey("TechnologyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Quiz");

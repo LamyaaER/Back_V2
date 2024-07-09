@@ -6,12 +6,8 @@
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public int QuizId { get; set; }
         public List<Quiz> Quizs { get; set; }
-
-        public int CandidatId { get; set; }
         public List<Candidate> Candidates { get; set; }
-
 
         public Agent()
         {
