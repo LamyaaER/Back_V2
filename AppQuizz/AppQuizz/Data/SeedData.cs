@@ -13,82 +13,73 @@ namespace AppQuizz.Data
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                // Look for any agents.
-                if (context.Agents.Any())
+                // Check if any data exists
+                if (context.Agents.Any() || context.Candidates.Any() || context.Technologies.Any() || context.Quizs.Any() || context.Questions.Any() || context.Responses.Any())
                 {
                     return;   // DB has been seeded
                 }
 
                 // Seed Agents
-                var agents = new Agent[]
+                for (int i = 1; i <= 60; i++)
                 {
-                    new Agent { Name = "Agent 1", Email = "agent1@example.com" },
-                    new Agent { Name = "Agent 2", Email = "agent2@example.com" },
-                    new Agent { Name = "Agent 3", Email = "agent3@example.com" },
-                    new Agent { Name = "Agent 4", Email = "agent4@example.com" }
-                };
-
-                context.Agents.AddRange(agents);
+                    context.Agents.Add(new Agent { Name = $"Agent {i}", Email = $"agent{i}@example.com" });
+                }
                 context.SaveChanges();
 
                 // Seed Candidates
-                var candidates = new Candidate[]
+                for (int i = 1; i <= 60; i++)
                 {
-                    new Candidate { Name = "Candidate 1", Email = "candidate1@example.com" },
-                    new Candidate { Name = "Candidate 2", Email = "candidate2@example.com" },
-                    new Candidate { Name = "Candidate 3", Email = "candidate3@example.com" },
-                    new Candidate { Name = "Candidate 4", Email = "candidate4@example.com" }
-                };
-
-                context.Candidates.AddRange(candidates);
+                    context.Candidates.Add(new Candidate { Name = $"Candidate {i}", Email = $"candidate{i}@example.com" });
+                }
                 context.SaveChanges();
 
                 // Seed Technologies
-                var technologies = new Technology[]
+                for (int i = 1; i <= 60; i++)
                 {
-                    new Technology { Name = "Technology 1" },
-                    new Technology { Name = "Technology 2" },
-                    new Technology { Name = "Technology 3" },
-                    new Technology { Name = "Technology 4" }
-                };
-
-                context.Technologies.AddRange(technologies);
+                    context.Technologies.Add(new Technology { Name = $"Technology {i}" });
+                }
                 context.SaveChanges();
 
                 // Seed Quizzes
-                var quizzes = new Quiz[]
-                {
-                    new Quiz { Title = "Quiz 1", CreatedAt = DateTime.Now, Url = "http://example.com/quiz1", AgentId = agents[0].Id, CandidateId = candidates[0].Id, TechnologyId = technologies[0].Id },
-                    new Quiz { Title = "Quiz 2", CreatedAt = DateTime.Now, Url = "http://example.com/quiz2", AgentId = agents[1].Id, CandidateId = candidates[1].Id, TechnologyId = technologies[1].Id },
-                    new Quiz { Title = "Quiz 3", CreatedAt = DateTime.Now, Url = "http://example.com/quiz3", AgentId = agents[2].Id, CandidateId = candidates[2].Id, TechnologyId = technologies[2].Id },
-                    new Quiz { Title = "Quiz 4", CreatedAt = DateTime.Now, Url = "http://example.com/quiz4", AgentId = agents[3].Id, CandidateId = candidates[3].Id, TechnologyId = technologies[3].Id }
-                };
+                var agents = context.Agents.ToList();
+                var candidates = context.Candidates.ToList();
+                var technologies = context.Technologies.ToList();
 
-                context.Quizs.AddRange(quizzes);
+                for (int i = 1; i <= 60; i++)
+                {
+                    context.Quizs.Add(new Quiz
+                    {
+                        Title = $"Quiz {i}",
+                        CreatedAt = DateTime.Now,
+                        Url = $"http://example.com/quiz{i}",
+                        AgentId = agents[i % agents.Count].Id,
+                        CandidateId = candidates[i % candidates.Count].Id,
+                        TechnologyId = technologies[i % technologies.Count].Id
+                    });
+                }
                 context.SaveChanges();
 
                 // Seed Questions
-                var questions = new Question[]
-                {
-                    new Question { Title = "Question 1", TypeResponse = "Multiple Choice", ComplexityLevel = "Easy", TechnologyId = technologies[0].Id, QuizId = quizzes[0].Id },
-                    new Question { Title = "Question 2", TypeResponse = "True/False", ComplexityLevel = "Medium", TechnologyId = technologies[1].Id, QuizId = quizzes[1].Id },
-                    new Question { Title = "Question 3", TypeResponse = "Short Answer", ComplexityLevel = "Hard", TechnologyId = technologies[2].Id, QuizId = quizzes[2].Id },
-                    new Question { Title = "Question 4", TypeResponse = "Essay", ComplexityLevel = "Very Hard", TechnologyId = technologies[3].Id, QuizId = quizzes[3].Id }
-                };
+                var quizzes = context.Quizs.ToList();
 
-                context.Questions.AddRange(questions);
+                for (int i = 1; i <= 60; i++)
+                {
+                    context.Questions.Add(new Question
+                    {
+                        Title = $"Question {i}",
+                        TypeResponse = "Multiple Choice",
+                        ComplexityLevel = "Easy",
+                        TechnologyId = technologies[i % technologies.Count].Id,
+                        QuizId = quizzes[i % quizzes.Count].Id
+                    });
+                }
                 context.SaveChanges();
 
                 // Seed Responses
-                var responses = new Response[]
+                for (int i = 1; i <= 60; i++)
                 {
-                    new Response { Content = "Response 1" },
-                    new Response { Content = "Response 2" },
-                    new Response { Content = "Response 3" },
-                    new Response { Content = "Response 4" }
-                };
-
-                context.Responses.AddRange(responses);
+                    context.Responses.Add(new Response { Content = $"Response {i}" });
+                }
                 context.SaveChanges();
             }
         }
