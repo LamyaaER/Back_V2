@@ -19,7 +19,7 @@ namespace AppQuizz.Data
                     return;   // DB has been seeded
                 }
 
-                // Agents
+                // Seed Agents
                 var agents = new Agent[]
                 {
                     new Agent { Name = "Agent 1", Email = "agent1@example.com" },
@@ -28,7 +28,10 @@ namespace AppQuizz.Data
                     new Agent { Name = "Agent 4", Email = "agent4@example.com" }
                 };
 
-                // Candidates
+                context.Agents.AddRange(agents);
+                context.SaveChanges();
+
+                // Seed Candidates
                 var candidates = new Candidate[]
                 {
                     new Candidate { Name = "Candidate 1", Email = "candidate1@example.com" },
@@ -37,7 +40,10 @@ namespace AppQuizz.Data
                     new Candidate { Name = "Candidate 4", Email = "candidate4@example.com" }
                 };
 
-                // Technologies
+                context.Candidates.AddRange(candidates);
+                context.SaveChanges();
+
+                // Seed Technologies
                 var technologies = new Technology[]
                 {
                     new Technology { Name = "Technology 1" },
@@ -46,7 +52,34 @@ namespace AppQuizz.Data
                     new Technology { Name = "Technology 4" }
                 };
 
-                // Responses
+                context.Technologies.AddRange(technologies);
+                context.SaveChanges();
+
+                // Seed Quizzes
+                var quizzes = new Quiz[]
+                {
+                    new Quiz { Title = "Quiz 1", CreatedAt = DateTime.Now, Url = "http://example.com/quiz1", AgentId = agents[0].Id, CandidateId = candidates[0].Id, TechnologyId = technologies[0].Id },
+                    new Quiz { Title = "Quiz 2", CreatedAt = DateTime.Now, Url = "http://example.com/quiz2", AgentId = agents[1].Id, CandidateId = candidates[1].Id, TechnologyId = technologies[1].Id },
+                    new Quiz { Title = "Quiz 3", CreatedAt = DateTime.Now, Url = "http://example.com/quiz3", AgentId = agents[2].Id, CandidateId = candidates[2].Id, TechnologyId = technologies[2].Id },
+                    new Quiz { Title = "Quiz 4", CreatedAt = DateTime.Now, Url = "http://example.com/quiz4", AgentId = agents[3].Id, CandidateId = candidates[3].Id, TechnologyId = technologies[3].Id }
+                };
+
+                context.Quizs.AddRange(quizzes);
+                context.SaveChanges();
+
+                // Seed Questions
+                var questions = new Question[]
+                {
+                    new Question { Title = "Question 1", TypeResponse = "Multiple Choice", ComplexityLevel = "Easy", TechnologyId = technologies[0].Id, QuizId = quizzes[0].Id },
+                    new Question { Title = "Question 2", TypeResponse = "True/False", ComplexityLevel = "Medium", TechnologyId = technologies[1].Id, QuizId = quizzes[1].Id },
+                    new Question { Title = "Question 3", TypeResponse = "Short Answer", ComplexityLevel = "Hard", TechnologyId = technologies[2].Id, QuizId = quizzes[2].Id },
+                    new Question { Title = "Question 4", TypeResponse = "Essay", ComplexityLevel = "Very Hard", TechnologyId = technologies[3].Id, QuizId = quizzes[3].Id }
+                };
+
+                context.Questions.AddRange(questions);
+                context.SaveChanges();
+
+                // Seed Responses
                 var responses = new Response[]
                 {
                     new Response { Content = "Response 1" },
@@ -55,31 +88,7 @@ namespace AppQuizz.Data
                     new Response { Content = "Response 4" }
                 };
 
-                // Questions
-                var questions = new Question[]
-                {
-                    new Question { Title = "Question 1", Response = responses[0], TypeResponse = "Text", ComplexityLevel = "Easy", Technology = technologies[0], Quiz = null },
-                    new Question { Title = "Question 2", Response = responses[1], TypeResponse = "Text", ComplexityLevel = "Medium", Technology = technologies[1], Quiz = null },
-                    new Question { Title = "Question 3", Response = responses[2], TypeResponse = "Text", ComplexityLevel = "Hard", Technology = technologies[2], Quiz = null },
-                    new Question { Title = "Question 4", Response = responses[3], TypeResponse = "Text", ComplexityLevel = "Easy", Technology = technologies[3], Quiz = null }
-                };
-
-                // Quizzes
-                var quizzes = new Quiz[]
-                {
-                    new Quiz { Title = "Quiz 1", CreatedAt = DateTime.Now, Url = "url1.com", Agent = agents[0], Candidate = candidates[0], Technology = technologies[0], Questions = new List<Question> { questions[0] } },
-                    new Quiz { Title = "Quiz 2", CreatedAt = DateTime.Now, Url = "url2.com", Agent = agents[1], Candidate = candidates[1], Technology = technologies[1], Questions = new List<Question> { questions[1] } },
-                    new Quiz { Title = "Quiz 3", CreatedAt = DateTime.Now, Url = "url3.com", Agent = agents[2], Candidate = candidates[2], Technology = technologies[2], Questions = new List<Question> { questions[2] } },
-                    new Quiz { Title = "Quiz 4", CreatedAt = DateTime.Now, Url = "url4.com", Agent = agents[3], Candidate = candidates[3], Technology = technologies[3], Questions = new List<Question> { questions[3] } }
-                };
-
-                context.Agents.AddRange(agents);
-                context.Candidates.AddRange(candidates);
-                context.Technologies.AddRange(technologies);
                 context.Responses.AddRange(responses);
-                context.Questions.AddRange(questions);
-                context.Quizs.AddRange(quizzes);
-
                 context.SaveChanges();
             }
         }
