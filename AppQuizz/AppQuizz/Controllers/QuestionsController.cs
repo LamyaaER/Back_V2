@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AppQuizz.Controllers
 {
-    [ApiController]
     public class QuestionsController : Controller
     {
         private readonly ApplicationDbContext _context;

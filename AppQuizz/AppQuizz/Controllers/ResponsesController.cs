@@ -9,7 +9,6 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
-    [ApiController]
     public class ResponsesController : Controller
     {
         private readonly ApplicationDbContext _context;
