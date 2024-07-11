@@ -1,21 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-public class AuthController : ControllerBase
+namespace AppQuizz.Controllers
 {
-    public async Task<IActionResult> Login([FromBody] LoginModel model)
+
+
+    public class AuthController : ControllerBase
     {
-        if (model.Username == "test" && model.Password == "password")
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
+            if (model.Username == "test" && model.Password == "password")
+            {
 
-            var token = "example-token";
-            return Ok(new { Token = token });
+                var token = "example-token";
+                return Ok(new { Token = token });
+            }
+            return Unauthorized();
         }
-        return Unauthorized();
     }
-}
 
-public class LoginModel
-{
-    public string Username { get; set; }
-    public string Password { get; set; }
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
 }
