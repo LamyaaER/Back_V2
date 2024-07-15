@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AppQuizz.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class QuestionsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,14 +21,16 @@ namespace AppQuizz.Controllers
             _context = context;
         }
 
-        // GET: Questions
+        // GET: api/Questions
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var questions = _context.Questions.Include(q => q.Technology).Include(q => q.Quiz);
             return View(await questions.ToListAsync());
         }
 
-        // GET: Questions/Details/5
+        // GET: api/Questions/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,17 +50,8 @@ namespace AppQuizz.Controllers
             return View(question);
         }
 
-        // GET: Questions/Create
-        public IActionResult Create()
-        {
-            ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Name");
-            ViewData["QuizId"] = new SelectList(_context.Quizs, "Id", "Title");
-            return View();
-        }
-
-        // POST: Questions/Create
+        // POST: api/Questions/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,TypeResponse,ComplexityLevel,TechnologyId,QuizId")] Question question)
         {
             if (ModelState.IsValid)
@@ -70,32 +65,18 @@ namespace AppQuizz.Controllers
             return View(question);
         }
 
-        // GET: Questions/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // PUT: api/Questions/Edit/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Edit(int? id, [Bind("Id,Title,TypeResponse,ComplexityLevel,TechnologyId,QuizId")] Question question)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var question = await _context.Questions.FindAsync(id);
-            if (question == null)
-            {
-                return NotFound();
-            }
-            ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Name", question.TechnologyId);
-            ViewData["QuizId"] = new SelectList(_context.Quizs, "Id", "Title", question.QuizId);
-            return View(question);
-        }
-
-        // POST: Questions/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,TypeResponse,ComplexityLevel,TechnologyId,QuizId")] Question question)
-        {
             if (id != question.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
@@ -123,7 +104,8 @@ namespace AppQuizz.Controllers
             return View(question);
         }
 
-        // GET: Questions/Delete/5
+        // DELETE: api/Questions/Delete/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,7 +125,7 @@ namespace AppQuizz.Controllers
             return View(question);
         }
 
-        // POST: Questions/Delete/5
+        // POST: api/Questions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

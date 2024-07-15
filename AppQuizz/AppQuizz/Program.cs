@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 using AppQuizz.Data;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
-using AppQuizz.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -18,6 +17,17 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<ITokenService, TokenService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
 
 builder.Services.AddAuthentication(options =>
 {
@@ -50,6 +60,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthentication();
 app.UseAuthorization();

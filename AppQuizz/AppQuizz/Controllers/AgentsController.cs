@@ -10,6 +10,9 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class AgentsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,12 +23,14 @@ namespace AppQuizz.Controllers
         }
 
         // GET: Agents
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Agents.ToListAsync());
         }
 
         // GET: Agents/Details/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +49,7 @@ namespace AppQuizz.Controllers
         }
 
         // GET: Agents/Create
+        [HttpPost]
         public IActionResult Create()
         {
             return View();
@@ -52,7 +58,7 @@ namespace AppQuizz.Controllers
         // POST: Agents/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email")] Agent agent)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,Password")] Agent agent)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +70,7 @@ namespace AppQuizz.Controllers
         }
 
         // GET: Agents/Edit/5
+        [HttpPut("{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,7 +89,7 @@ namespace AppQuizz.Controllers
         // POST: Agents/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email")] Agent agent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Password")] Agent agent)
         {
             if (id != agent.Id)
             {
@@ -113,6 +120,7 @@ namespace AppQuizz.Controllers
         }
 
         // GET: Agents/Delete/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

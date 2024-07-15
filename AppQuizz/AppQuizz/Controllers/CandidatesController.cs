@@ -9,6 +9,8 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CandidatesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,13 +20,15 @@ namespace AppQuizz.Controllers
             _context = context;
         }
 
-        // GET: Candidates
+        // GET: api/Candidates
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Candidates.ToListAsync());
         }
 
-        // GET: Candidates/Details/5
+        // GET: api/Candidates/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,15 +46,8 @@ namespace AppQuizz.Controllers
             return View(candidate);
         }
 
-        // GET: Candidates/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Candidates/Create
+        // POST: api/Candidates/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Email")] Candidate candidate)
         {
             if (ModelState.IsValid)
@@ -62,30 +59,18 @@ namespace AppQuizz.Controllers
             return View(candidate);
         }
 
-        // GET: Candidates/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // PUT: api/Candidates/Edit/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Edit(int? id, [Bind("Id,Name,Email")] Candidate candidate)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var candidate = await _context.Candidates.FindAsync(id);
-            if (candidate == null)
-            {
-                return NotFound();
-            }
-            return View(candidate);
-        }
-
-        // POST: Candidates/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email")] Candidate candidate)
-        {
             if (id != candidate.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
@@ -111,7 +96,8 @@ namespace AppQuizz.Controllers
             return View(candidate);
         }
 
-        // GET: Candidates/Delete/5
+        // DELETE: api/Candidates/Delete/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,7 +115,7 @@ namespace AppQuizz.Controllers
             return View(candidate);
         }
 
-        // POST: Candidates/Delete/5
+        // POST: api/Candidates/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

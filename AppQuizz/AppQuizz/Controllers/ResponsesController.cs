@@ -9,6 +9,8 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ResponsesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,13 +20,15 @@ namespace AppQuizz.Controllers
             _context = context;
         }
 
-        // GET: Responses
+        // GET: api/Responses
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Responses.ToListAsync());
         }
 
-        // GET: Responses/Details/5
+        // GET: api/Responses/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +46,7 @@ namespace AppQuizz.Controllers
             return View(response);
         }
 
-        // GET: Responses/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Responses/Create
+        // POST: api/Responses/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Content")] Response response)
@@ -62,30 +60,14 @@ namespace AppQuizz.Controllers
             return View(response);
         }
 
-        // GET: Responses/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var response = await _context.Responses.FindAsync(id);
-            if (response == null)
-            {
-                return NotFound();
-            }
-            return View(response);
-        }
-
-        // POST: Responses/Edit/5
-        [HttpPost]
+        // PUT: api/Responses/Edit/5
+        [HttpPut("{id}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Content")] Response response)
         {
             if (id != response.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
@@ -111,7 +93,8 @@ namespace AppQuizz.Controllers
             return View(response);
         }
 
-        // GET: Responses/Delete/5
+        // DELETE: api/Responses/Delete/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,7 +112,7 @@ namespace AppQuizz.Controllers
             return View(response);
         }
 
-        // POST: Responses/Delete/5
+        // POST: api/Responses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

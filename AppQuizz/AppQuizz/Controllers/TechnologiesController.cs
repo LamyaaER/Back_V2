@@ -9,6 +9,8 @@ using AppQuizz.Models;
 
 namespace AppQuizz.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TechnologiesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,13 +20,15 @@ namespace AppQuizz.Controllers
             _context = context;
         }
 
-        // GET: Technologies
+        // GET: api/Technologies
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Technologies.ToListAsync());
         }
 
-        // GET: Technologies/Details/5
+        // GET: api/Technologies/Details/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +46,7 @@ namespace AppQuizz.Controllers
             return View(technology);
         }
 
-        // GET: Technologies/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Technologies/Create
+        // POST: api/Technologies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] Technology technology)
@@ -62,30 +60,14 @@ namespace AppQuizz.Controllers
             return View(technology);
         }
 
-        // GET: Technologies/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var technology = await _context.Technologies.FindAsync(id);
-            if (technology == null)
-            {
-                return NotFound();
-            }
-            return View(technology);
-        }
-
-        // POST: Technologies/Edit/5
-        [HttpPost]
+        // PUT: api/Technologies/Edit/5
+        [HttpPut("{id}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Technology technology)
         {
             if (id != technology.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
@@ -111,7 +93,8 @@ namespace AppQuizz.Controllers
             return View(technology);
         }
 
-        // GET: Technologies/Delete/5
+        // DELETE: api/Technologies/Delete/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,7 +112,7 @@ namespace AppQuizz.Controllers
             return View(technology);
         }
 
-        // POST: Technologies/Delete/5
+        // POST: api/Technologies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

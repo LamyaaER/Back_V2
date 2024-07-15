@@ -22,21 +22,33 @@ namespace AppQuizz.Data
                 // Seed Agents
                 for (int i = 1; i <= 60; i++)
                 {
-                    context.Agents.Add(new Agent { Name = $"Agent {i}", Email = $"agent{i}@example.com" });
+                    context.Agents.Add(new Agent
+                    {
+                        Name = $"Agent {i}",
+                        Email = $"agent{i}@example.com",
+                        Password = $"password{i}" // Note: Use hashed passwords in production
+                    });
                 }
                 context.SaveChanges();
 
                 // Seed Candidates
                 for (int i = 1; i <= 60; i++)
                 {
-                    context.Candidates.Add(new Candidate { Name = $"Candidate {i}", Email = $"candidate{i}@example.com" });
+                    context.Candidates.Add(new Candidate
+                    {
+                        Name = $"Candidate {i}",
+                        Email = $"candidate{i}@example.com"
+                    });
                 }
                 context.SaveChanges();
 
                 // Seed Technologies
                 for (int i = 1; i <= 60; i++)
                 {
-                    context.Technologies.Add(new Technology { Name = $"Technology {i}" });
+                    context.Technologies.Add(new Technology
+                    {
+                        Name = $"Technology {i}"
+                    });
                 }
                 context.SaveChanges();
 
@@ -78,7 +90,10 @@ namespace AppQuizz.Data
                 // Seed Responses
                 for (int i = 1; i <= 60; i++)
                 {
-                    context.Responses.Add(new Response { Content = $"Response {i}" });
+                    context.Responses.Add(new Response
+                    {
+                        Content = $"Response {i}"
+                    });
                 }
                 context.SaveChanges();
             }

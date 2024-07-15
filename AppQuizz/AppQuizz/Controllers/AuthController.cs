@@ -5,9 +5,16 @@ namespace AppQuizz.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     public class AuthController : ControllerBase
     {
+        private readonly ITokenService _tokenService;
+
+        public AuthController(ITokenService tokenService)
+        {
+            _tokenService = tokenService;
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
